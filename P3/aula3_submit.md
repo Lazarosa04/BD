@@ -113,10 +113,9 @@ Fare(Code)
 Leg_instance(Date)
 ```
 
-
 ### *c)* 
 
-![ex_3_2c!](ex3_2c.pdf "AnImage")
+![ex_3_2c!](ex_3_2c.pdf "AnImage")
 
 
 ## ​Problema 3.3
@@ -124,16 +123,16 @@ Leg_instance(Date)
 
 ### *a)* 2.1
 
-![ex_3_3_a!](ex3_3a.pdf "AnImage")
+![ex_3_3_a!](ex_3_3a.pdf "AnImage")
 
 ### *b)* 2.2
 
-![ex_3_3_b!](ex3_3b.pdf "AnImage")
+![ex_3_3_b!](ex_3_3b.pdf "AnImage")
 
 ### *c)* 2.3
 
-![ex_3_3_c!](ex3_3c.pdf "AnImage")
+![ex_3_3_c!](ex_3_3c.pdf "AnImage")
 
 ### *d)* 2.4
 
-![ex_3_3_d!](ex3_3d.pdf "AnImage")
+![ex_3_3_d!](ex_3_3d.pdf "AnImage")
