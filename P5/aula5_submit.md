@@ -108,37 +108,45 @@ Empregados_em_departamentos_fora_de_aveiro = π Fname, Minit, Lname, Address, Ss
 ### *a)*
 
 ```
-... Write here your answer ...
+Pacientes_e_prescricao = π nome, numUtente (paciente ) ⟕ paciente.numUtente = prescricao.numUtente (prescricao)
+
+σ prescricao.numPresc = null (Pacientes_e_prescricao)
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+γ medico.especialidade; count(medico.especialidade) -> numEspecialidade (π numMedico, numPresc (prescricao) ⨝ numMedico = numSNS (medico))
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ prescricao.farmacia; count(prescricao.farmacia) -> num (σ farmacia ≠ null (π farmacia, numPresc (prescricao)))
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+farmaco_f906 = σ farmaco.numRegFarm = 906 (π nome, numRegFarm (farmaco))
+farmaco_presc_f906 = σ presc_farmaco.numRegFarm = 906 (π nomeFarmaco, numRegFarm (presc_farmaco))
+
+farmaco_f906 - farmaco_presc_f906
 ```
 
 ### *e)* 
 
 ```
-... Write here your answer ...
+γ farmacia, farmaceutica.nome ; count(numPresc) -> sells (farmaceutica ⨝ numReg=numRegFarm (presc_farmaco ⨝ (σ farmacia≠null prescricao)))
 ```
 
 ### *f)* 
 
 ```
-... Write here your answer ...
+pacientes_e_prescricao = π nome, numUtente (paciente ) ⟕ paciente.numUtente = prescricao.numUtente (prescricao)
+
+σ medicos > 1 (γ paciente.nome; count(prescricao.numMedico) -> medicos (pacientes_e_prescricao))
+
 ```
