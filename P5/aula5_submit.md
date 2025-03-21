@@ -34,7 +34,7 @@
 ### *e)* 
 
 ```
- π Fname, Minit, Lname (σ Essn = null (π Fname, Minit, Lname, Ssn (employee) ⟕ Ssn = Essn (works_on) ))
+π Fname, Minit, Lname (σ Essn = null (π Fname, Minit, Lname, Ssn (employee) ⟕ Ssn = Essn (works_on) ))
 ```
 
 
@@ -48,7 +48,7 @@
 ### *g)* 
 
 ```
- σ dependent_number>2 (γFname; count(Dependent_name) -> dependent_number (π Fname, Lname, Ssn (employee) ⨝ Ssn = Essn (dependent)))
+σ dependent_number>2 (γFname; count(Dependent_name) -> dependent_number (π Fname, Lname, Ssn (employee) ⨝ Ssn = Essn (dependent)))
 ```
 
 
