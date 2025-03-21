@@ -41,7 +41,7 @@
 ### *f)* 
 
 ```
-... Write here your answer ...
+γ Dname; avg(Salary) -> Salary (σ Sex='F' (department ⨝ Dnumber = Dno (employee)))
 ```
 
 
@@ -55,7 +55,7 @@
 ### *h)* 
 
 ```
-... Write here your answer ...
+π Ssn, Fname, Minit, Lname (σ Essn=null (dependent ⟖ Essn=Ssn ((employee) ⨝ Ssn=Mgr_ssn (department))))
 ```
 
 
@@ -79,27 +79,27 @@ Empregados_em_departamentos_fora_de_aveiro = π Fname, Minit, Lname, Address, Ss
 ### *a)*
 
 ```
-... Write here your answer ...
+π nif, nome (σ encomenda.numero=null (fornecedor ⟕ nif=fornecedor encomenda))
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+π nome, avg_unidades (produto⨝codigo=codProd (ρprod_avg γ codProd;avg(unidades)->avg_unidades item))
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+n_produtos=(γ numEnc;count(codProd) -> n_p item) γ avg(n_p) -> avg_enc (n_produtos)
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+γ fornecedor.nome, produto.nome; sum(item.unidades)->quantidade (π fornecedor.nome, produto.nome,item.unidades (produto ⨝(codigo=codProd) (item ⨝(numEnc=numero) (fornecedor ⨝(nif=fornecedor) encomenda))))
 ```
 
 
