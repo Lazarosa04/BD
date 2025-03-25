@@ -49,13 +49,13 @@ WHERE pub_name LIKE '%Bo%';
 ### *h)* Número total de vendas de cada editora; 
 
 ```
-... Write here your answer ...
+select t.pub_id,SUM(s.qty) as sales from sales as s join titles as t on s.title_id=t.title_id group by pub_id
 ```
 
 ### *i)* Número total de vendas de cada editora agrupado por título; 
 
 ```
-... Write here your answer ...
+select t.pub_id,t.title,SUM(s.qty) as sales from sales as s join titles as t on s.title_id=t.title_id group by pub_id,title
 ```
 
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
