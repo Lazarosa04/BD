@@ -35,7 +35,9 @@ select au_fname as first_name, au_lname as last_name, phone as telephone from au
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
 
 ```
-... Write here your answer ...
+SELECT pub_name
+FROM publishers
+WHERE pub_name LIKE '%Bo%';
 ```
 
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
@@ -47,13 +49,13 @@ select distinct pub_name from publishers inner join  titles on publishers.pub_id
 ### *h)* Número total de vendas de cada editora; 
 
 ```
-... Write here your answer ...
+select t.pub_id,SUM(s.qty) as sales from sales as s join titles as t on s.title_id=t.title_id group by pub_id
 ```
 
 ### *i)* Número total de vendas de cada editora agrupado por título; 
 
 ```
-... Write here your answer ...
+select t.pub_id,t.title,SUM(s.qty) as sales from sales as s join titles as t on s.title_id=t.title_id group by pub_id,title
 ```
 
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
@@ -72,7 +74,7 @@ group by au_fname, au_lname having count(distinct type)>1
 ### *l)* Para os títulos, obter o preço médio e o número total de vendas agrupado por tipo (type) e editora (pub_id);
 
 ```
-... Write here your answer ...
+select t.pub_id,t.type,AVG(t.price) as avg_price,SUM(s.qty) as sales from sales as s join titles as t on s.title_id=t.title_id group by pub_id, type
 ```
 
 ### *m)* Obter o(s) tipo(s) de título(s) para o(s) qual(is) o máximo de dinheiro “à cabeça” (advance) é uma vez e meia superior à média do grupo (tipo);
