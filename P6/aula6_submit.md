@@ -73,7 +73,7 @@ select t.pub_id,t.title,SUM(s.qty) as sales from sales as s join titles as t on 
 ### *l)* Para os títulos, obter o preço médio e o número total de vendas agrupado por tipo (type) e editora (pub_id);
 
 ```
-... Write here your answer ...
+select t.pub_id,t.type,AVG(t.price) as avg_price,SUM(s.qty) as sales from sales as s join titles as t on s.title_id=t.title_id group by pub_id, type
 ```
 
 ### *m)* Obter o(s) tipo(s) de título(s) para o(s) qual(is) o máximo de dinheiro “à cabeça” (advance) é uma vez e meia superior à média do grupo (tipo);
