@@ -5,31 +5,31 @@
 ### *a)* Todos os tuplos da tabela autores (authors);
 
 ```
-... Write here your answer ...
+select * from authors;
 ```
 
 ### *b)* O primeiro nome, o último nome e o telefone dos autores;
 
 ```
-... Write here your answer ...
+select au_fname, au_lname, phone from authors;
 ```
 
 ### *c)* Consulta definida em b) mas ordenada pelo primeiro nome (ascendente) e depois o último nome (ascendente); 
 
 ```
-... Write here your answer ...
+select au_fname, au_lname, phone from authors order by au_fname, au_lname;
 ```
 
 ### *d)* Consulta definida em c) mas renomeando os atributos para (first_name, last_name, telephone); 
 
 ```
-... Write here your answer ...
+select au_fname as first_name, au_lname as last_name, phone as telephone from authors order by au_fname, au_lname;
 ```
 
 ### *e)* Consulta definida em d) mas só os autores da Califórnia (CA) cujo último nome é diferente de ‘Ringer’; 
 
 ```
-... Write here your answer ...
+select au_fname as first_name, au_lname as last_name, phone as telephone from authors where au_lname!='Ringer' and state='CA' order by au_fname, au_lname;
 ```
 
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
@@ -41,7 +41,7 @@
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
 
 ```
-... Write here your answer ...
+select distinct pub_name from publishers inner join  titles on publishers.pub_id = titles.pub_id where type='Business';
 ```
 
 ### *h)* Número total de vendas de cada editora; 
@@ -59,13 +59,14 @@
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
 
 ```
-... Write here your answer ...
+select title from stores join sales on stores.stor_id=sales.stor_id join titles on sales.title_id=titles.title_id where stor_name='Bookbeat'
 ```
 
 ### *k)* Nome de autores que tenham publicações de tipos diferentes; 
 
 ```
-... Write here your answer ...
+select au_fname, au_lname from authors as a join titleauthor as ta on a.au_id = ta.au_id join titles as t on ta.title_id = t.title_id 
+group by au_fname, au_lname having count(distinct type)>1
 ```
 
 ### *l)* Para os títulos, obter o preço médio e o número total de vendas agrupado por tipo (type) e editora (pub_id);
@@ -83,7 +84,8 @@
 ### *n)* Obter, para cada título, nome dos autores e valor arrecadado por estes com a sua venda;
 
 ```
-... Write here your answer ...
+select au_fname, au_lname, title, price*royalty*royaltyper/100/100 as gainPerSale from titles as t inner join titleauthor as ta on t.title_id = ta.title_id inner join authors as a on a.au_id = ta.au_id order by title;
+
 ```
 
 ### *o)* Obter uma lista que incluía o número de vendas de um título (ytd_sales), o seu nome, a faturação total, o valor da faturação relativa aos autores e o valor da faturação relativa à editora;
