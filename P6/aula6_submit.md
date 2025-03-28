@@ -183,55 +183,104 @@ WHERE NOT EXISTS (
 ##### *a)*
 
 ```
-... Write here your answer ...
+SELECT (Fname + ' ' + Minit + '.' + ' ' + Lname) AS full_name, ssn, Pname
+FROM EMPRESA.Employee
+JOIN EMPRESA.Works_On
+ON Ssn=Essn
+JOIN EMPRESA.Project
+ON Pno=Pnumber;
 ```
 
 ##### *b)* 
 
 ```
-... Write here your answer ...
+SELECT (Fname + ' ' + Minit + '.' + ' ' + Lname) AS full_name FROM EMPRESA.Employee WHERE Super_ssn =(
+SELECT Ssn
+FROM EMPRESA.Employee
+WHERE Fname='Carlos' AND Minit='D' AND Lname='Gomes');
 ```
 
 ##### *c)* 
 
 ```
-... Write here your answer ...
+SELECT Pname, SUM(Hours) AS total_hours
+FROM EMPRESA.Employee
+JOIN EMPRESA.Works_ON
+ON Ssn=Essn
+JOIN EMPRESA.Project
+ON Pno=Pnumber
+GROUP BY Pname;
 ```
 
 ##### *d)* 
 
 ```
-... Write here your answer ...
+SELECT (Fname + ' ' + Minit + '.' + ' ' + Lname) AS full_name
+FROM EMPRESA.Employee
+JOIN EMPRESA.Works_On
+ON Ssn=Essn
+JOIN EMPRESA.Project
+ON Pno=Pnumber
+WHERE Dno=3 AND Pname='Aveiro Digital' AND Hours > 20;
 ```
 
 ##### *e)* 
 
 ```
-... Write here your answer ...
+SELECT (Fname + ' ' + Minit + '.' + ' ' + Lname) AS full_name
+FROM EMPRESA.Employee
+FULL OUTER JOIN EMPRESA.Works_On
+ON Ssn=Essn
+WHERE Hours IS NULL;
 ```
 
 ##### *f)* 
 
 ```
-... Write here your answer ...
+SELECT Dname, AVG(Salary)
+FROM
+(SELECT *
+FROM EMPRESA.Department
+JOIN EMPRESA.Employee
+ON Dnumber=DNo
+WHERE Sex='F') AS A
+GROUP BY Dname;
 ```
 
 ##### *g)* 
 
 ```
-... Write here your answer ...
+SELECT Essn
+FROM EMPRESA.Dependents
+JOIN EMPRESA.Employee
+ON Essn=Ssn
+GROUP BY Essn
+HAVING COUNT(Essn) > 2;
 ```
 
 ##### *h)* 
 
 ```
-... Write here your answer ...
+SELECT Mgr_ssn FROM 
+(SELECT *
+FROM EMPRESA.Dependents
+FULL OUTER JOIN EMPRESA.Department
+ON Essn=Mgr_ssn) AS E
+WHERE E.Essn IS NULL;
 ```
 
 ##### *i)* 
 
 ```
-... Write here your answer ...
+SELECT DISTINCT (Fname + ' ' + Minit + '.' + ' ' + Lname) AS full_name, Address
+FROM EMPRESA.Employee
+JOIN EMPRESA.Works_On
+ON Ssn=Essn
+JOIN EMPRESA.Project
+ON Pno=Pnumber
+JOIN EMPRESA.Dept_Locations
+ON Dno=Dnumber
+WHERE Plocation='Aveiro' AND Dlocation!='Aveiro';
 ```
 
 ### 5.2
