@@ -322,14 +322,27 @@ JOIN (
 ##### *c)* 
 
 ```
-... Write here your answer ...
+use GestaoStock
+SELECT AVG(n_p) AS avg_enc
+FROM (
+    SELECT numEnc, COUNT(codProd) AS n_p
+    FROM encomenda
+	JOIN item ON encomenda.numero = item.numEnc
+    GROUP BY numEnc
+) AS n_produtos;
 ```
 
 
 ##### *d)* 
 
 ```
-... Write here your answer ...
+SELECT f.nome AS fornecedor_nome, p.nome AS produto_nome, SUM(i.unidades) AS quantidade
+FROM fornecedor f
+JOIN encomenda e ON f.nif = e.fornecedor
+JOIN item i ON i.numEnc = e.numero
+JOIN produto p ON p.codigo = i.codProd
+GROUP BY f.nome, p.nome;
+
 ```
 
 ### 5.3
