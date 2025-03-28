@@ -360,37 +360,61 @@ GROUP BY f.nome, p.nome;
 ##### *a)*
 
 ```
-... Write here your answer ...
+SELECT p.nome, p.numUtente
+FROM paciente p
+LEFT JOIN prescricao pr ON p.numUtente = pr.numUtente
+WHERE pr.numPresc IS NULL;
 ```
 
 ##### *b)* 
 
 ```
-... Write here your answer ...
+SELECT m.especialidade, COUNT(m.especialidade) AS numPrescricao
+FROM prescricao pr
+JOIN medico m ON pr.numMedico = m.numSNS
+GROUP BY m.especialidade;
 ```
 
 
 ##### *c)* 
 
 ```
-... Write here your answer ...
+SELECT pr.farmacia, COUNT(pr.farmacia) AS num
+FROM prescricao pr
+WHERE pr.farmacia IS NOT NULL
+GROUP BY pr.farmacia;
 ```
 
 
 ##### *d)* 
 
 ```
-... Write here your answer ...
+SELECT f.nome
+FROM farmaco f
+LEFT JOIN presc_farmaco pf ON f.nome = pf.nomeFarmaco
+WHERE f.numRegFarm = '906' AND pf.nomeFarmaco IS NULL;
+
 ```
 
 ##### *e)* 
 
 ```
-... Write here your answer ...
+SELECT p.farmacia, f.nome AS farmaceutica, COUNT(pf.nomeFarmaco) AS num_farmacos_vendidos
+FROM prescricao p
+JOIN presc_farmaco pf ON p.numPresc = pf.numPresc
+JOIN farmaco fa ON pf.nomeFarmaco = fa.nome
+JOIN farmaceutica f ON fa.numRegFarm = f.numReg
+WHERE p.farmacia IS NOT NULL
+GROUP BY p.farmacia, f.nome
+order by p.farmacia;
 ```
 
 ##### *f)* 
 
 ```
-... Write here your answer ...
+SELECT p.nome, COUNT(distinct pr.numMedico) AS medicos
+FROM paciente p
+JOIN prescricao pr ON p.numUtente = pr.numUtente
+GROUP BY p.nome
+HAVING COUNT(distinct pr.numMedico) > 1;
 ```
