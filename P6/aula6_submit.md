@@ -298,13 +298,24 @@ WHERE Plocation='Aveiro' AND Dlocation!='Aveiro';
 ##### *a)*
 
 ```
-... Write here your answer ...
+SELECT f.nif, f.nome
+FROM fornecedor f
+LEFT JOIN encomenda e ON f.nif = e.fornecedor
+WHERE e.numero IS NULL;
 ```
 
 ##### *b)* 
 
 ```
-... Write here your answer ...
+use GestaoStock
+SELECT p.nome, pa.avg_unidades
+FROM produto p
+JOIN (
+    SELECT codProd, AVG(unidades) AS avg_unidades
+    FROM item
+    GROUP BY codProd
+) pa ON p.codigo = pa.codProd;
+
 ```
 
 
