@@ -3,42 +3,50 @@
 ## Entidades e Características
 
 ### 1. **Viatura**
+
     - ID Viatura
     - Matrícula
     - Ano
     - Tipo (ligação com Tipo Viatura)
 
 ### 2. **Tipo Viatura**
+
     - ID Tipo Viatura
     - Nome
 
 ### 3. **Quartel**
+
     - ID Quartel
     - Nome Quartel
     - Endereço
     - Telefone
 
 ### 4. **Equipamento**
+
     - ID Equipamento
     - Nome
     - Quantidade
 
 ### 5. **Manutenção**
+
     - ID Manutenção
     - Data Manutenção
     - Descrição
 
 ### 6. **Ocorrência**
+
     - ID Ocorrência
     - Data e Hora
 
 ### 7. **Chamada**
+
     - ID Chamada
     - Data e Hora
     - Descrição
     - Local
 
 ### 8. **Bombeiro**
+
     - ID Bombeiro
     - Nome
     - Data Nascimento
@@ -48,19 +56,23 @@
     - Telemóvel
 
 ### 9. **Formação**
+
     - ID Formação
     - Data Início
     - Data Fim
 
 ### 10. **Especialização**
+
     - ID Especialização
     - Nome
 
 ### 11. **Férias**
+
     - Data Início
     - Data Fim
 
 ### 12. **Baixa**
+
     - Data Início
     - Data Fim
     - Razão
