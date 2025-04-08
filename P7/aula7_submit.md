@@ -7,7 +7,7 @@
 
 ```
 ... Write here your answer ...
-It is possible to <u>underline</u> -> {A, B,.. }
+It is possible to <u>underline</u> - {A, B,.. }
 -> R1 (_A_, B, C)
 -> R2 (B,F)
 ```
@@ -15,7 +15,11 @@ It is possible to <u>underline</u> -> {A, B,.. }
 ### *b)* 
 
 ```
-... Write here your answer ...
+Livro - {<u>Titulo Livro</u>, <u>Nome Autor</u>, Afiliacao_Autor, Tipo_Livro, Preco, NoPaginas, Editor, Endereco_Editor, Ano_Publicacao} 1FN
+R1 -{}
+R2 -{<u>Nome Autor</u>, Afiliacao_Autor}
+R3 -{Preco, <u>NoPaginas</u>, <u>Tipo_Livro</u>}
+R4 -{<u>Editor</u>, Endereco_Editor}
 ```
 
 
