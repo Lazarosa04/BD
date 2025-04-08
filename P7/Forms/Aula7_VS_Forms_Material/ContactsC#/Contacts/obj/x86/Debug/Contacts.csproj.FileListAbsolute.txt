@@ -1,0 +1,10 @@
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\bin\Debug\Contacts.exe.config
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\bin\Debug\Contacts.exe
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\bin\Debug\Contacts.pdb
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.csproj.AssemblyReference.cache
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.Form1.resources
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.Properties.Resources.resources
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.csproj.GenerateResource.cache
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.csproj.CoreCompileInputs.cache
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.exe
+C:\Users\lazar\OneDrive\Ambiente de Trabalho\Work\Ano 3\Semestre 2\BD\P\P7\Forms\Aula7_VS_Forms_Material\ContactsC#\Contacts\obj\x86\Debug\Contacts.pdb
