@@ -42,12 +42,11 @@ Chave de R: {A,B}
 
 ### *b)* 
 
-```
+``` 
 -R1(<u>A</u>, <u>B</u>, C)
 -R2(<u>A</u> , D, E, I, J)
 -R3(<u>B</u> , F, G, H)
 ```
-
 
 ### *c)* 
 
@@ -65,21 +64,26 @@ Chave de R: {A,B}
 ### *a)*
 
 ```
-... Write here your answer ...
+Chave de R: {B, C}
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+3FN:
+    -R1 = (<u>A</u>, <u>B</u>, C, D, E) 
+    -R2 = (<u>D</u>, E)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+BCNF:
+    -R1 = (<u>C</u>, <u>B</u>, D)
+    -R2 = (<u>C</u>, A)
+    -R3 = (<u>D</u>, E)
 ```
 
 
