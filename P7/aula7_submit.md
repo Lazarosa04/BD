@@ -6,20 +6,26 @@
 ### *a)*
 
 ```
-... Write here your answer ...
-It is possible to <u>underline</u> - {A, B,.. }
--> R1 (_A_, B, C)
--> R2 (B,F)
+A relação está na forma 1FN porque tem Dependências Parciais e Dependências Transitivas.
+Dependencias Parciais:
+Nome_Autor -> Afiliação_Autor
+
+Dependências Transistivas:
+Editor -> Endereço_Editor
+Tipo_Livro, NoPaginas -> Preço
 ```
 
 ### *b)* 
 
 ```
-Livro - {<u>Titulo Livro</u>, <u>Nome Autor</u>, Afiliacao_Autor, Tipo_Livro, Preco, NoPaginas, Editor, Endereco_Editor, Ano_Publicacao} 1FN
-R1 -{}
-R2 -{<u>Nome Autor</u>, Afiliacao_Autor}
-R3 -{Preco, <u>NoPaginas</u>, <u>Tipo_Livro</u>}
-R4 -{<u>Editor</u>, Endereco_Editor}
+1º Parte: Colocar na forma 2FN (eliminar dependencias parciais)
+-> Autor(<u>Nome_Autor</u>, Afiliação_Autor)
+-> Livro(<u>Titulo_Livro</u>, <u>Nome_Autor</u>, Tipo_Livro, Preco, NoPaginas,Editor, Endereco_Editor, Ano_Publicacao)
+
+2º Parte: Colocar na forma 3FN (eliminar dependencias transitivas)
+-> Editor(<u>Editor</u>, Endereço_Editor)
+-> TipoLivro(<u>Tipo_Livro, <u>NoPAginas</u>, Preco)
+-> Livro(<u>Titulo_Livro</u>, <u>Nome_Autor</u> ,Editor, Tipo_Livro, NoPaginas, Ano_Publicaçao)
 ```
 
 
@@ -30,21 +36,27 @@ R4 -{<u>Editor</u>, Endereco_Editor}
 ### *a)*
 
 ```
-... Write here your answer ...
+Chave de R: {A,B}
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+-R1(<u>A</u>, <u>B</u>, C)
+-R2(<u>A</u> , D, E, I, J)
+-R3(<u>B</u> , F, G, H)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+-R1(<u>A</u>, <u>B</u>,C)
+-R2(<u>A</u>, D, E)
+-R3(<u>B</u>, F)
+-R4(<u>F</u>, G, H)
+-R5(<u>D</u>, I, J)
 ```
 
 
