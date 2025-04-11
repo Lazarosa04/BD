@@ -115,6 +115,3 @@ Chave de R: {A,B}
 -R2(<u>A</u>, C)
 -R3(<u>C</u>, D)
 ```
-```
-... Write here your answer ...
-```
