@@ -93,24 +93,29 @@ BCNF:
 ### *a)*
 
 ```
-... Write here your answer ...
+Chave de R: {A,B}
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+-R1(<u>A</u>, <u>B</u>, D, E)
+-R2(<u>A</u>, C)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+-R1(<u>A</u>, B, E)
+-R2(<u>A</u>, C)
+-R3(<u>C</u>, D)
 ```
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+-R1(<u>A</u>, B, E)
+-R2(<u>A</u>, C)
+-R3(<u>C</u>, D)
 ```
