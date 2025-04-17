@@ -42,7 +42,10 @@
 
     - **ID Ocorrência**
     - ID Quartel (ligação com Quartel)
+    - ID Bombeiro (ligação com Bombeiro)
+    - ID Viatura (ligação com Viatura)
     - Data e Hora
+    
 
 ### 7. **Chamada**
 
@@ -70,6 +73,7 @@
 
     - **ID Formação**
     - ID Quartel (ligação com Quartel)
+    - ID Bombeiro (ligação com Bombeiro)
     - Data Início
     - Data Fim
 
@@ -81,13 +85,13 @@
 ### 11. **Férias**
 
     - ID Bombeiro (ligação com Bombeiro)
-    - Data Início
+    - **Data Início**
     - Data Fim
 
 ### 12. **Baixa**
 
     - ID Bombeiro (ligação com Bombeiro)
-    - Data Início
+    - **Data Início**
     - Data Fim
     - Razão
 
@@ -125,7 +129,7 @@
     - Um quartel possui vários equipamentos.
 
 4. **Equipamento - Viatura**
-    - Um equipamento pode estar associado a uma viatura.
+    - Vários equipamentos podem estar associados a uma viatura.
 
 5. **Manutenção - Viatura**
     - Uma viatura pode necessitar de manutenção várias vezes.
