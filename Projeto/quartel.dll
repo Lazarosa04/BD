@@ -86,14 +86,14 @@ create table Bombeiro_Especialização(
 --férias
 create table Férias(
 	ID_Bombeiro			int references Bombeiro(ID_Bombeiro),
-	Data_Inicio			date,
+	Data_Inicio			date primary key,
 	Data_Fim			date
 );
 
 --baixa
 create table Baixa(
 	ID_Bombeiro			int references Bombeiro(ID_Bombeiro),
-	Data_Inicio			date,
+	Data_Inicio			date pimary key,
 	Data_Fim			date,
 	Razão				varchar(300)
 );
