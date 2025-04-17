@@ -3,6 +3,7 @@
 ## Entidades e Características
 
 ### 1. **Viatura**
+
     - **ID Viatura**
     - ID Quartel (ligação com Quartel)
     - ID Tipo Viatura (ligação com Tipo Viatura)
@@ -10,16 +11,19 @@
     - Ano
 
 ### 2. **Tipo Viatura**
+
     - **ID Tipo Viatura**
     - Nome Tipo Viatura
 
 ### 3. **Quartel**
+
     - **ID Quartel**
     - Nome Quartel
     - Endereço
     - Telefone
 
 ### 4. **Equipamento**
+
     - **ID Equipamento**
     - ID Quartel (ligação com Quartel)
     - ID Viatura (ligação com Viatura)
@@ -27,6 +31,7 @@
     - Quantidade
 
 ### 5. **Manutenção**
+
     - **ID Manutenção**
     - ID Viatura (ligação com Viatura)
     - ID Equipamento (ligação com Equipamento)
@@ -34,11 +39,13 @@
     - Descrição
 
 ### 6. **Ocorrência**
+
     - **ID Ocorrência**
     - ID Quartel (ligação com Quartel)
     - Data e Hora
 
 ### 7. **Chamada**
+
     - **ID Chamada**
     - ID Ocorrência (ligação com Ocorrência)
     - Origem (chamada direta ou redirecionada)
@@ -49,6 +56,7 @@
     - Número
 
 ### 8. **Bombeiro**
+
     - **ID Bombeiro**
     - ID Quartel (ligação com Quartel)
     - Nome Bombeiro
@@ -59,39 +67,47 @@
     - Telemóvel
 
 ### 9. **Formação**
+
     - **ID Formação**
     - ID Quartel (ligação com Quartel)
     - Data Início
     - Data Fim
 
 ### 10. **Especialização**
+
     - **ID Especialização**
     - Nome Especialização
 
 ### 11. **Férias**
+
     - ID Bombeiro (ligação com Bombeiro)
     - Data Início
     - Data Fim
 
 ### 12. **Baixa**
+
     - ID Bombeiro (ligação com Bombeiro)
     - Data Início
     - Data Fim
     - Razão
 
 ### 13. **Bombeiro_Formação**
+
     - ID Bombeiro (ligação com Bombeiro)
     - ID Formação (ligação com Formação)
 
 ### 14. **Bombeiro_Especialização**
+
     - ID Bombeiro (ligação com Bombeiro)
     - ID Especialização (ligação com Especialização)
 
 ### 15. **Bombeiro_Ocorrência**
+
     - ID Bombeiro (ligação com Bombeiro)
     - ID Ocorrência (ligação com Ocorrência)
 
 ### 16. **Viatura_Ocorrência**
+
     - ID Viatura (ligação com Viatura)
     - ID Ocorrência (ligação com Ocorrência)
 
