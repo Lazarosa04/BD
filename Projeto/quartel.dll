@@ -67,7 +67,7 @@ create table Formação(
 --um bombeiro pode participar de várias Formações
 create table Bombeiro_Formação(
 	ID_Bombeiro			int references Bombeiro(ID_Bombeiro),
-	ID_Formação			int references Formação(ID_Formação)I
+	ID_Formação			int references Formação(ID_Formação),
 );
 
 --especialização
@@ -93,7 +93,7 @@ create table Férias(
 --baixa
 create table Baixa(
 	ID_Bombeiro			int references Bombeiro(ID_Bombeiro),
-	Data_Inicio			date pimary key,
+	Data_Inicio			date primary key,
 	Data_Fim			date,
 	Razão				varchar(300)
 );
