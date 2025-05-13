@@ -44,13 +44,21 @@ Instead Of Insert, Update As
 ### *e)* 
 
 ```
-... Write here your answer ...
+CREATE FUNCTION udfe (@ssn CHAR(9)) RETURNS TABLE
+AS
+	RETURN (SELECT DISTINCT Pname, Plocation FROM employee JOIN works_on ON Essn=@ssn JOIN project ON Pno=Pnumber);
 ```
 
 ### *f)* 
 
 ```
-... Write here your answer ...
+CREATE FUNCTION udff (@dno INT) RETURNS TABLE
+AS
+	RETURN (
+		SELECT * FROM employee AS E WHERE @dno=Dno AND E.salary > (
+			SELECT AVG(Salary) FROM employee WHERE Dno=@dno
+		)
+	);
 ```
 
 ### *g)* 
