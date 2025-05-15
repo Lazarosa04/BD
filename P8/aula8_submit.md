@@ -17,7 +17,13 @@ Go
 ### *b)* 
 
 ```
-... Write here your answer ...
+CREATE PROCEDURE get_managers_and_oldest_manager (@oldestEmployee INT OUTPUT)
+AS
+	SELECT TOP 1 @oldestEmployee = Ssn
+	FROM (department JOIN employee ON Mgr_ssn = Ssn) 
+	ORDER BY Mgr_start_date DESC
+	SELECT * FROM (department JOIN employee ON Mgr_ssn = Ssn)
+
 ```
 
 ### *c)* 
