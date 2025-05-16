@@ -44,7 +44,29 @@ Instead Of Insert, Update As
 ### *d)* 
 
 ```
-... Write here your answer ...
+Create Trigger SalaryControl On employee After Update, Insert
+As
+	Declare @new_salary Int;
+	Declare @new_ssn Int;
+	Declare @new_dep Int;
+
+	Declare @mgr_salary Int;
+	Declare @mgr_ssn Int;
+
+	Select @new_dep = Dno, @new_salary = Salary, @new_ssn = ssn From inserted
+
+	Select @mgr_ssn = Mgr_ssn From Department Where Dnumber = @dep_no;
+	Select @mgr_salary = Salary From employee Where ssn = @mgr_ssn;
+
+	If @new_sakary > @mgr_salary
+	Begin
+        UPDATE Employee
+        SET Salary = @mgr_salary - 1
+        WHERE Ssn = @new_ssn;
+		Print 'Employee não pode ganhar mais que Manager, salário ajustado';
+	End
+
+
 ```
 
 ### *e)* 
@@ -82,5 +104,21 @@ AS
 ### *i)* 
 
 ```
-... Write here your answer ...
+Stored Procedures:
+São essencialmente funções como em outras linguagens;
+Pode-se chamar outras Stored Procedures dentro delas;
+Podem devolver zero, um ou vários valores;
+Têm parametros de input e output;
+Permitem lidar com exceções e executar transações.
+
+User Defined Functions:
+Só devolvem um valor;
+São determinísticas;
+Permitem o uso de Select/Where/Having statements;
+Só têm parametros de input;
+
+AS Stored Procedures são segmentos de código que realizam certas funções, reutilizáveis, devem ser utilizadas quando se pertende fazer uma série de operações em uma só transação, são mais moldáveis e servem uma variedade de usos.
+
+As User Defined Functions, que só aceitam parâmetros de entrada e só devolvem um valor e permitem o uso dos statements, funcionam quase como queries reutilizáveis que dependem do input.
+
 ```
