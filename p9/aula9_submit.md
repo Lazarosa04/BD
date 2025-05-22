@@ -16,7 +16,7 @@ Complete the following table.
 | 6.2  | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945                              |   1105    |    0.473   |      812      |    67       |       ProductID Covered (StartDate)     |          Clustered Index Scan            |            |
 | 6.3  | SELECT WorkOrderID FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2006-01-04'            |  1     |    0.473   |         814   |          40 |        ProductID Covered (StartDate)    |       Clustered Index Scan               |            |
 | 7    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2006-01-04' |     1  |     0.473  |      814      |   35        |       ProductID and StartDate     |          Clustered Index Scan            |            |
-| 8    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2006-01-04' |       |       |            |           |        Composite (ProductID, StartDate)     |                      |            |
+| 8    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2006-01-04' |       |       |            |           |        Composite (ProductID, StartDate)     |          Non Clustered Index Seek            |            |
 
 ## ​9.2.
 
