@@ -188,7 +188,91 @@ SELECT * FROM sys.dm_db_index_physical_stats (DB_ID(), OBJECT_ID('mytemp'), NULL
 ### e)
 
 ```
-... Write here your answer ...
+--Sem índices
+use AdventureWorks2012;
+go
+
+DROP INDEX ixRid on mytemp
+
+DECLARE @start_time DATETIME, @end_time DATETIME;
+SET @start_time = GETDATE();
+PRINT @start_time
+
+-- Generate random records
+DECLARE @val as int = 1;
+DECLARE @nelem as int = 50000;
+
+SET nocount ON
+
+WHILE @val <= @nelem
+BEGIN
+
+	DBCC DROPCLEANBUFFERS; -- need to be sysadmin
+
+	INSERT mytemp (at1, at2, at3, lixo)
+	SELECT cast((RAND()*@nelem) as int),
+			cast((RAND()*@nelem) as int), cast((RAND()*@nelem) as int),
+			'lixo...lixo...lixo...lixo...lixo...lixo...lixo...lixo...lixo';
+	SET @val = @val + 1;
+END
+
+PRINT 'Inserted ' + str(@nelem) + ' total records'
+
+
+-- Duration of Insertion Process
+SET @end_time = GETDATE();
+PRINT 'Milliseconds used: ' + CONVERT(VARCHAR(20), DATEDIFF(MILLISECOND,
+		@start_time, @end_time));
+
+--63793 ms
+
+-- Com índices
+
+use AdventureWorks2012;
+go
+
+
+CREATE INDEX ix1 on mytemp(rid)
+CREATE INDEX ix2 on mytemp(at1)
+CREATE INDEX ix3 on mytemp(at2)
+CREATE INDEX ix4 on mytemp(at3)
+CREATE INDEX ix5 on mytemp(lixo)
+
+DELETE FROM mytemp;
+
+DECLARE @start_time DATETIME, @end_time DATETIME;
+SET @start_time = GETDATE();
+PRINT @start_time
+
+-- Generate random records
+DECLARE @val as int = 1;
+DECLARE @nelem as int = 50000;
+
+SET nocount ON
+
+WHILE @val <= @nelem
+BEGIN
+
+	DBCC DROPCLEANBUFFERS; -- need to be sysadmin
+
+	INSERT mytemp (at1, at2, at3, lixo)
+	SELECT cast((RAND()*@nelem) as int),
+			cast((RAND()*@nelem) as int), cast((RAND()*@nelem) as int),
+			'lixo...lixo...lixo...lixo...lixo...lixo...lixo...lixo...lixo';
+	SET @val = @val + 1;
+END
+
+PRINT 'Inserted ' + str(@nelem) + ' total records'
+
+
+-- Duration of Insertion Process
+SET @end_time = GETDATE();
+PRINT 'Milliseconds used: ' + CONVERT(VARCHAR(20), DATEDIFF(MILLISECOND,
+		@start_time, @end_time));
+
+--68930 ms
+
+--Adicionar índices em todos os atributos cria um overhead, pelo que a inserção com os índices todos é substancialmente mais lenta que a inserção sem os índices.
 ```
 
 ## ​9.3.
