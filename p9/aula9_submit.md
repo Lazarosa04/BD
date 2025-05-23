@@ -7,16 +7,19 @@ Complete the following table.
 | #    | Query                                                                                                      | Rows  | Cost  | Pag. Reads | Time (ms) | Index used | Index Op.            | Discussion |
 | :--- | :--------------------------------------------------------------------------------------------------------- | :---- | :---- | :--------- | :-------- | :--------- | :------------------- | :--------- |
 | 1    | SELECT * from Production.WorkOrder                                                                         | 72591 | 0.484 | 531        | 1171      | WorkOrderID (PK)          | Clustered Index Scan |            |
-| 2    | SELECT * from Production.WorkOrder where WorkOrderID=1234                                                  |   1  |    0.0032831   |   278         |   46        |       WorkOrderID (PK)      |      Clustered Index Seek                |            |
-| 3.1  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 10000 and 10010                               |  11     |    0.0032952   |         278   |   64        |        WorkOrderID (PK)    |   Clustered Index Seek                   |            |
-| 3.2  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 1 and 72591                                   |  72591     |    0.473   |        808    |       531    |     WorkOrderID (PK)       |                  Clustered Index Seek    |            |
-| 4    | SELECT * FROM Production.WorkOrder WHERE StartDate = '2007-06-25'                                          |    72591   |    0.473   |      812      |    39       |    WorkOrderID (PK)         |   Clustered Index Scan                   |            |
-| 5    | SELECT * FROM Production.WorkOrder WHERE ProductID = 757                                                   |      11.4 |    0.037   |        302    |         76  |       ProductID     |              Non Clustered Index Seek        |            |
-| 6.1  | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 757                              |   11.4    |    0.037   |      302      |   55        |       ProductID Covered (StartDate)     |                 Non Clustered Index Seek     |            |
-| 6.2  | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945                              |   1105    |    0.473   |      812      |    67       |       ProductID Covered (StartDate)     |          Clustered Index Scan            |            |
-| 6.3  | SELECT WorkOrderID FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2006-01-04'            |  1     |    0.473   |         814   |          40 |        ProductID Covered (StartDate)    |       Clustered Index Scan               |            |
-| 7    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2006-01-04' |     1  |     0.473  |      814      |   35        |       ProductID and StartDate     |          Clustered Index Scan            |            |
-| 8    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2006-01-04' |       |       |            |           |        Composite (ProductID, StartDate)     |          Non Clustered Index Seek            |            |
+| 2    | SELECT * from Production.WorkOrder where WorkOrderID=1234                                                  |   1  |    0.003   |   20         |   64        |       WorkOrderID (PK)      |      Clustered Index Seek                |            |
+| 3.1  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 10000 and 10010                               |  11     |    0.003   |         20   |   81        |        WorkOrderID (PK)    |   Clustered Index Seek                   |            |
+| 3.2  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 1 and 72591                                   |  72591     |    0.473   |        558    |       541    |     WorkOrderID (PK)       |                  Clustered Index Seek    |            |
+| 4    | SELECT * FROM Production.WorkOrder WHERE StartDate = '2012-05-14'                                         |    55   |    0.522   |      556      |    127       |    WorkOrderID (PK)         |   Clustered Index Scan                   |            |
+| 5    | SELECT * FROM Production.WorkOrder WHERE ProductID = 757                                                   |      9 |    0.003   |        46    |         65  |       ProductID     |              Non Clustered Index Seek        |            |
+| 6.1  | SELECT WorkOrderID StartDate FROM Production.WorkOrder WHERE ProductID = 757                              |   9    |    0.003   |      40      |   41        |       ProductID Covered (StartDate)     |                 Non Clustered Index Seek     |            |
+| 6.2  | SELECT WorkOrderID StartDate FROM Production.WorkOrder WHERE ProductID = 945                              |   1105    |    0.473   |      556      |    87       |       ProductID Covered (StartDate)     |          Clustered Index Scan            |            |
+| 6.3  | SELECT WorkOrderID FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04'            |  1     |    0.003   |         35   |          34 |        ProductID Covered (StartDate)    |       Non Clustered Index Seek             |            |
+| 7    | SELECT WorkOrderID StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04' |     1  |     0.016  |      35      |   30        |       ProductID and StartDate     |          Non Clustered Index Seek           |            |
+| 8    | SELECT WorkOrderID StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04' |   1    |      0.003 |        28    |       30    |        Composite (ProductID, StartDate)     |                Non Clustered Index Seek      |            |
+
+
+
 
 ## ​9.2.
 
@@ -275,8 +278,21 @@ PRINT 'Milliseconds used: ' + CONVERT(VARCHAR(20), DATEDIFF(MILLISECOND,
 --Adicionar índices em todos os atributos cria um overhead, pelo que a inserção com os índices todos é substancialmente mais lenta que a inserção sem os índices.
 ```
 
+
 ## ​9.3.
 
 ```
-... Write here your answer ...
+i. Create Unique Clustered Index SsnIndex On Company.Employee(Ssn);
+
+ii. Create NonClusteed Index FnameLnameIndex On Company.Employee(Fname,Lname);
+
+iii. Create NonClustered Index EmployeeDnoIndex On Company.Employee(Dno);
+     Create Unique Clustered Index DnumberIndex On Company.Department(Dnumber);
+
+iv. Create NonClustered Index PnumIndex On Empresa.Project(Pnumber);
+    Create Unique Clustered Index PnoEssnIndex On Empresa.Works_on(Pno, Essn);
+
+v. Create Unique Clustered Index DepNameEssnIndex On Empresa.Dependents(Dependent_name, Essn);
+
+vi. Create Clustered Index DnoPnumIndex On Empresa.Project(Pnumber,Dnum);
 ```
