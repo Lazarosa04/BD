@@ -10,17 +10,17 @@ insert into TipoViatura values(4444,'Pesado');
 insert into TipoViatura values(5555,'Ligeiro');
 insert into TipoViatura values(6666,'Ambulância');
 
-insert into Viatura values(1234512345,11111,4444,'AB-12-EF',2021);
-insert into Viatura values(2345623456,22222,5555,'CD-34-GH',2020);
-insert into Viatura values(3456734567,33333,6666,'EF-56-IJ',2019);
+insert into Viatura values(123456789,11111,4444,'AB-12-EF',2021);
+insert into Viatura values(234567890,22222,5555,'CD-34-GH',2020);
+insert into Viatura values(345678901,33333,6666,'EF-56-IJ',2019);
 
-insert into Equipamento values(685475,11111,1234512345,'Extintor',3);
-insert into Equipamento values(785476,22222,2345623456,'Desfibrilhador',2);
-insert into Equipamento values(895477,33333,3456734567,'Kit Primeiros Socorros',5);
+insert into Equipamento values(685475,11111,123456789,'Extintor',3);
+insert into Equipamento values(785476,22222,234567890,'Desfibrilhador',2);
+insert into Equipamento values(895477,33333,345678901,'Kit Primeiros Socorros',5);
 
-insert into Manutenção values(321321,1234512345,685475,'2024-11-12','Ajuste da pressão.');
-insert into Manutenção values(432432,2345623456,785476,'2025-01-10','Substituição de bateria.');
-insert into Manutenção values(543543,3456734567,895477,'2025-02-20','Revisão geral.');
+insert into Manutenção values(321321,123456789,685475,'2024-11-12','Ajuste da pressão.');
+insert into Manutenção values(432432,234567890,785476,'2025-01-10','Substituição de bateria.');
+insert into Manutenção values(543543,345678901,895477,'2025-02-20','Revisão geral.');
 
 insert into Formação values(55555,11111,'2024-06-12','2024-10-13');
 insert into Formação values(66666,22222,'2025-01-01','2025-05-01');
@@ -54,9 +54,9 @@ insert into Bombeiro_Ocorrência values(333,12345);
 insert into Bombeiro_Ocorrência values(444,23456);
 insert into Bombeiro_Ocorrência values(555,34567);
 
-insert into Viatura_Ocorrência values(333,1234512345);
-insert into Viatura_Ocorrência values(444,2345623456);
-insert into Viatura_Ocorrência values(555,3456734567);
+insert into Viatura_Ocorrência values(333,123456789);
+insert into Viatura_Ocorrência values(444,234567890);
+insert into Viatura_Ocorrência values(555,345678901);
 
 insert into Chamada values(7777777,333,0,'Fogo em habitação','Adelaide Sousa','2025-04-12 14:25:35','Rua blable,7 2ºD',965123321);
 insert into Chamada values(8888888,444,1,'Acidente de viação','Carlos Pinto','2025-04-01 09:15:00','Avenida Central, 50',912345678);
